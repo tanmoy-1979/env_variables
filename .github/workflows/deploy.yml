@@ -9,9 +9,9 @@ env:
 jobs:
   test:
     env: 
-      MONGODB_CLUSTER_ADDRESS: cluster0.bauklge.mongodb.net
+      MONGODB_CLUSTER_ADDRESS: cluster0.fa2huu.mongodb.net
       MONGODB_USERNAME: test_tan
-      MONGODB_PASSWORD: Cloud#1851
+      MONGODB_PASSWORD: Cloud_1851
       PORT: 8080      
     environment: testing
     runs-on: ubuntu-latest
@@ -30,7 +30,8 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "Mongo User ID ${{ env.MONGODB_USERNAME }}"
+        run: | 
+         echo "Mongo User ID ${{ env.MONGODB_USERNAME }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
