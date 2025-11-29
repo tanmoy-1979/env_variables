@@ -8,12 +8,13 @@ env:
   MONGODB_DB_NAME: gha-demo
 jobs:
   test:
+    environment: testing
     env: 
       MONGODB_CLUSTER_ADDRESS: cluster0.fa2huu.mongodb.net
-      MONGODB_USERNAME: ${{secrets.DB_UID}}
-      MONGODB_PASSWORD: ${{secrets.DB_PWD}}
+      MONGODB_USERNAME: ${{secrets.MONGO_UID}}
+      MONGODB_PASSWORD: ${{secrets.MONGO_PWD}}
       PORT: 8080      
-    environment: testing
+    
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
